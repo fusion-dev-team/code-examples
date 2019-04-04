@@ -164,7 +164,7 @@ export class PartnerService extends ServiceBase {
     }
 
     // tslint:disable-next-line:max-line-length
-    public createPartner(command: CreatePartnerCommand2): Promise<CreatePartnerResult> {
+    public createPartner(command: CreatePartnerCommand): Promise<CreatePartnerResult> {
         return this.request<CreatePartnerResult>('/BdManagerPartner/CreatePartner', 'post', {}, command);
     }
 
@@ -176,7 +176,7 @@ export class PartnerService extends ServiceBase {
 }
 
       
-export interface CreatePartnerCommand2 extends IYtValidatableObject {
+export interface CreatePartnerCommand extends IYtValidatableObject {
     name?: string;
     email?: string;
     phone?: string;
