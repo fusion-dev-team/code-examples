@@ -1,0 +1,195 @@
+/* Font variables */
+
+// Gotham family
+$font-primary: "Gotham";
+$font-secondary: "Suisse BP Int'l";
+
+// PRIMARY FONTS
+@mixin fn-gotham {
+  font-family: $font-primary;
+  font-weight: 800;
+}
+
+@mixin fn-gotham-bold {
+  font-family: $font-primary;
+  font-weight: 700;
+}
+
+@mixin fn-gotham-medium {
+  font-family: $font-primary;
+  font-weight: 500;
+}
+
+@mixin fn-gotham-book {
+  font-family: $font-primary;
+  font-weight: 400;
+}
+
+@mixin fn-gotham-light {
+  font-family: $font-primary;
+  font-weight: 300;
+}
+
+// SECONDARY FONTS
+@mixin fn-suisse-regular {
+  @include font-shape($font-weight: 400, $font-family: $font-secondary);
+}
+
+@mixin fn-suisse-medium {
+  @include font-shape($font-weight: 500, $font-family: $font-secondary);
+}
+
+/* Colors variables */
+$color-primary: #01CE69;
+$color-secondary: #2173FF;
+$color-white: #FFFFFF;
+$color-black: #1A1D34;
+$color-blackest: #000000;
+$color-darkgrey: #999999;
+$color-grey: #C9C9C9;
+$color-grey-alt: #4A4A4A;
+$color-grey-alt-2: #7B7B7B;
+$color-lightergrey: #EBEBEB;
+$color-lightblue: #00B5F6;
+$color-purple: #3D16FD;
+$color-pink: #C600FE;
+$color-grey-bg: #FAFAFA;
+$color-royal-blue: #2166FA;
+$color-electric-purple: #A712FD;
+$color-gainsboro: #D8D8D8;
+$color-nobel: #9B9B9B;
+
+$color-main-title: $color-blackest;
+$color-main-description: $color-grey-alt;
+
+/* Breakpoint variables */
+// width variables
+$width-xs: 320px; // iphone 5, portrait
+$width-sm: 576px; // iphone 5, landscaped
+$width-tablet-sm: 768px; // ipad portrait
+$width-lg: 992px; // tablets
+$width-tablet-lg: 1024px; // ipad landscaped, old monitors
+$width-xl: 1200px; // desktops
+
+//height variables
+//...
+
+// setting variables
+$primary-padding-horizontal: 178px;
+$primary-padding-horizontal-lg: $primary-padding-horizontal / 2;
+
+/* Mixins */
+// MEDIA QUERIES //
+@mixin media-query-width($media: $width-xs, $direction: max) {
+  $extrema: null;
+
+  @if $direction == max {
+    $extrema: max;
+  }
+  @if $direction == min {
+    $extrema: min;
+  }
+  @media only screen and (#{$extrema}-width: $media - 1px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @include media-query-width($width-xl) {
+    @content;
+  }
+}
+
+@mixin media-tablet-lg {
+  @include media-query-width($width-tablet-lg) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @include media-query-width($width-lg) {
+    @content;
+  }
+}
+
+@mixin media-tablet-sm {
+  @include media-query-width($width-tablet-sm) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @include media-query-width($width-sm) {
+    @content;
+  }
+}
+
+@mixin media-xs {
+  @include media-query-width($width-xs) {
+    @content;
+  }
+}
+
+// FONTS //
+@mixin font-shape(
+  $font-size: null,
+  $letter-spacing: null,
+  $line-height: null,
+  $font-weight: null,
+  $font-family: null,
+) {
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-family: $font-family;
+}
+
+/*
+ * Because there is a lot of font shapes,
+ * it's better to prepare mixins for it
+ *
+  Font shape naming convention:
+  fn-FONT_SIZE-letter
+  e.g. `fn-29-b`
+*/
+// FONT-SIZE 125PX
+@mixin fn-125-a {
+  @include font-shape(125px, -1.53px, 130px);
+
+  @include media-sm {
+    @include font-shape(64px, -1.45px, 70px);
+  }
+}
+
+
+// FONT-SIZE 50PX
+@mixin fn-50-a {
+  @include font-shape(50px, -1.04px, 63px);
+
+  @include media-sm {
+    @include font-shape(34px, -0.77px, 40px);
+  }
+}
+
+// FONT-SIZE 17PX
+@mixin fn-17-a {
+  @include font-shape(17px, -0.35px, 28px);
+  
+  @include media-sm {
+    @include font-shape(16px, -0.36px, 25px);
+  }
+}
+
+@mixin fn-17-b {
+  @include font-shape(17px, 0, 28px);
+}
+
+@mixin fn-17-c {
+  @include font-shape(17px, -0.22px, 43px);
+
+  @include media-sm {
+    @include font-shape(16px, -0.36px, 25px);
+  }
+}
+
