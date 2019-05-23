@@ -1,0 +1,8 @@
+// importing base scss
+@import './base.scss';
+
+// Collecting all partials for the page
+@import './about/our-mission.scss';
+@import './about/our-values.scss';
+@import './about/our-team-section.scss';
+@import './about/customer-first-section.scss';
