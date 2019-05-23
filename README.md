@@ -17,3 +17,6 @@ The news model contains only the title, picture, date and time of creation, the 
 Universal system for determining the route system
 
 
+## SASS
+
+Some examples for sass and files structure 
