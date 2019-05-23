@@ -1,0 +1,79 @@
+@import '../utils/constants.scss';
+
+.screen-our-values {
+  display: grid;
+  grid-template-rows: 231px auto 307px;
+  grid-template-columns: 147px repeat(2, 1fr) 147px;
+  @include fn-gotham-medium;
+
+  @include media-xl {
+    grid-template-columns: 10px repeat(2, 1fr);
+  }
+
+  @include media-lg {
+    display: flex;
+    background-image: url('/images/assets/05_about/we-value@mobile.png');
+    background-size: cover;
+    background-position: center;
+    padding-top: 154px;
+    padding-bottom: 103px;
+  }
+
+
+  &__content {
+    grid-column: 3 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 79px;
+
+    @include media-lg {
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    max-width: 523px;
+    @include fn-50-a;
+
+    @include media-lg {
+      max-width: unset;
+      margin-bottom: 17px;
+      text-align: center;
+      padding: 0 36px;
+    }
+  }
+
+  &__description {
+    max-width: 523px;
+    @include fn-17-c;
+
+    @include media-lg {
+      max-width: unset;
+      text-align: center;
+      padding: 0 66px;
+    }
+  }
+
+  &__description-item {
+    @include media-lg {
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__background {
+    background-image: url('/images/assets/05_about/we-value.png');
+    background-size: cover;
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+
+    @include media-lg {
+      display: none;
+    }
+  }
+
+}
