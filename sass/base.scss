@@ -1,0 +1,31 @@
+@import './utils/fonts.scss';
+
+html {
+  color: $color-grey-alt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 400;
+  font-size: unset;
+}
+
+p {
+  margin: 0;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+ul {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
